@@ -1,0 +1,27 @@
+preset: package
+
+namespace: Dealskoo\Like
+user-auth-provider: App\User
+
+paths:
+  src: src
+  resource: resources
+
+factory:
+  path: database/factories
+
+migration:
+  path: database/migrations
+  prefix: ''
+
+console:
+  namespace: Dealskoo\Like\Console
+
+model:
+  namespace: Dealskoo\Like\Models
+
+provider:
+  namespace: Dealskoo\Like\Providers
+
+testing:
+  namespace: Dealskoo\Like\Tests
