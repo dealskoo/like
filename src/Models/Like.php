@@ -5,10 +5,13 @@ namespace Dealskoo\Like\Models;
 use Dealskoo\Like\Events\Liked;
 use Dealskoo\Like\Events\Unliked;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Like extends Model
 {
+    use HasFactory;
+
     protected $dispatchesEvents = [
         'created' => Liked::class,
         'deleted' => Unliked::class
