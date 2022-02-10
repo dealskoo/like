@@ -100,22 +100,6 @@ class LikeTest extends TestCase
         $this->assertEmpty($sqls->all());
     }
 
-    public function test_object_liker_with_custom_morph_class_name()
-    {
-        $user1 = User::create(['name' => 'user1']);
-        $user2 = User::create(['name' => 'user2']);
-
-        $post = Post::create(['title' => 'test post']);
-
-        $user1->like($post);
-        $user2->like($post);
-
-        $this->assertCount(2, $post->likers);
-
-        $this->assertSame($user1->name, $post->likers[0]['name']);
-        $this->assertSame($user2->name, $post->likers[1]['name']);
-    }
-
     public function test_eager_loading()
     {
         $user = User::create(['name' => 'user']);
