@@ -9,7 +9,6 @@ use Dealskoo\Like\Tests\Post;
 use Dealskoo\Like\Tests\Product;
 use Dealskoo\Like\Tests\TestCase;
 use Dealskoo\Like\Tests\User;
-use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
@@ -18,11 +17,6 @@ use Illuminate\Support\Facades\Event;
 class LikeTest extends TestCase
 {
     use RefreshDatabase;
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-    }
 
     public function test_basic_features()
     {
