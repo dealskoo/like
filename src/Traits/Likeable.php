@@ -2,6 +2,7 @@
 
 namespace Dealskoo\Like\Traits;
 
+use Dealskoo\Like\Models\Like;
 use Illuminate\Database\Eloquent\Model;
 
 trait Likeable
@@ -15,6 +16,11 @@ trait Likeable
             return $this->likers()->where('user_id', $user->getKey())->exists();
         }
         return false;
+    }
+
+    public function likes()
+    {
+        return $this->morphMany(Like::class, 'likeable');
     }
 
     public function likers()

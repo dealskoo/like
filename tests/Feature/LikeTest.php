@@ -87,6 +87,7 @@ class LikeTest extends TestCase
         $user1->like($post);
         $user2->like($post);
         $this->assertCount(2, $post->likers);
+        $this->assertCount(2, $post->likes);
 
         $this->assertSame($user1->name, $post->likers[0]['name']);
         $this->assertSame($user2->name, $post->likers[1]['name']);
